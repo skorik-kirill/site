@@ -1,0 +1,31 @@
+#ignor all data in root
+/*
+#leave themes
+!wp-content/
+
+wp-content/*
+!wp-content/themes
+
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+*.log
+*.sql
+*.sqlite
+
+~*
+
+!.gitignore
+
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
