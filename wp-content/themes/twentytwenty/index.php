@@ -45,7 +45,7 @@ get_header();
 				number_format_i18n( $wp_query->found_posts )
 			);
 		} else {
-			$archive_subtitle = __( 'We could not find any results for your search. You can give it another try through the search form below.', 'twentytwenty' );
+			$archive_subtitle = __( 'We could not find any results for your search.', 'twentytwenty' );
 		}
 	} elseif ( ! is_home() ) {
 		$archive_title    = get_the_archive_title();
