@@ -1,0 +1,23 @@
+pipeline{
+   agent any
+   stages {
+        stage('download from SCM'){
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/skorik-kirill/site.git']]])
+            }
+       }
+        stage('info about build'){
+            steps{
+                echo "JOB name:'${env.JOB_NAME}'"
+            }
+        }
+    }
+   post{
+       success{
+           mail bcc: '', body: "job:${env.BUILD_URL} success ", cc: '', from: '', replyTo: '', subject: 'JobStatus', to: 'skorikkirill7@gmail.com'
+       }
+       failure{
+           mail bcc: '', body: "job: ${env.BUILD_URL} failure", cc: '', from: '', replyTo: '', subject: 'JobStatus', to: 'skorikkirill7@gmail.com'
+       }
+   }
+  }
