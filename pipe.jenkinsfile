@@ -11,6 +11,12 @@ pipeline{
                 echo "JOB name:'${env.JOB_NAME}'"
             }
         }
+        stage('deploy to vh01.local'){
+            steps{
+                sh label: '', script: 'rsync -ahv --no-o --no-g --no-p /var/lib/jenkins/workspace/siteOnHost1/wp-content jenkins@192.168.52.130:/var/www/html/vh01.local/wordpress'
+            }
+        }
+       
     }
    post{
        success{
