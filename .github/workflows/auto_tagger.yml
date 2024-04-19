@@ -11,7 +11,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Bump version and push tag
-      uses: skorik-kirill/site/auto-tagger@master
+      uses: RueLaLa/auto-tagger@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_PR_NUMBER: ${{ github.event.number }}
