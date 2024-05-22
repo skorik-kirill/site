@@ -1,8 +1,5 @@
 name: auto_tagger
 on:
-  push:
-    branches: 
-      - master
   pull_request:
     branches:
       - master
